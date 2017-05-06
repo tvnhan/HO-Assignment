@@ -1,0 +1,11 @@
+{
+  "name": "ho-assignment-server-code",
+  "version": "1.0.0",
+  "description": "This is the server build for Holistics assignment",
+  "main": "ho_assi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tcchtnn",
+  "license": "ISC"
+}
