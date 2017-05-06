@@ -1,0 +1,17 @@
+{
+  "db": {
+    "url": "ds131061.mlab.com:31061/gruber",
+    "user": "admin",
+    "password": "Navnahn123!\"#"
+  },
+  "port": 5009,
+  "collection_name": {
+    "driver": "driver",
+    "passenger": "passenger",
+    "driver_loca": "driver_loca",
+    "request_his": "request_his"
+  }
+}
+
+
+
