@@ -9,6 +9,7 @@
   "author": "tcchtnn",
   "license": "ISC",
   "dependencies": {
+    "config": "^1.26.1",
     "express": "^4.15.2"
   }
 }
