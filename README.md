@@ -24,10 +24,17 @@ The detail of Cache Manger component:
 There are many algorithm to solve this issue such as: bruce force, kd-tree, region-based, ...  <br />
 In gruber system, I suggestion use the Voronoi algorithm.  <br />
 (link: https://en.wikipedia.org/wiki/Voronoi_diagram)
+The demo of this algorithm was posted here: <br />
+http://www.raymondhill.net/voronoi/rhill-voronoi-demo1.html
 
+The describe of voronoi algorithm:
+![alt text](https://i.gyazo.com/1d0ae8e101be0d6bfe9631b223d1993f.png)
 
 # Demo
 Link demo:
 http://nhan.trantientin.com
+
+# Refenrences
+* http://stackoverflow.com/questions/34855352/how-in-general-does-node-js-handle-10-000-concurrent-requests
 
 
