@@ -21,13 +21,9 @@ The detail of Cache Manger component:
 * When passenger post the request driver, we will read the data in the cache manager (on memory), so we can reduce the I/O interaction time.
 
 # K-Nearest neighboor algorithm
-There are many algorithm to solve this issue such as: bruce force, kd-tree, region-based, ...
-In gruber system, I suggestion use the Voronoi algorithm.
+There are many algorithm to solve this issue such as: bruce force, kd-tree, region-based, ...  <br />
+In gruber system, I suggestion use the Voronoi algorithm.  <br />
 (link: https://en.wikipedia.org/wiki/Voronoi_diagram)
-
-```
-Give an example
-```
 
 
 # Demo
