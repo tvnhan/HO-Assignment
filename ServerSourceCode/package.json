@@ -9,9 +9,12 @@
   "author": "tcchtnn",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "config": "^1.26.1",
     "express": "^4.15.2",
+    "method-override": "^2.3.8",
     "mongodb": "^2.2.26",
-    "mongoose": "^4.9.7"
+    "mongoose": "^4.9.7",
+    "morgan": "^1.8.1"
   }
 }
