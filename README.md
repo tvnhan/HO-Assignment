@@ -25,6 +25,11 @@ There are many algorithm to solve this issue such as: bruce force, kd-tree, regi
 In gruber system, I suggestion use the Voronoi algorithm.
 (link: https://en.wikipedia.org/wiki/Voronoi_diagram)
 
+```
+Give an example
+```
+
+
 # Demo
 Link demo:
 http://nhan.trantientin.com
