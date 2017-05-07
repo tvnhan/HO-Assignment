@@ -1,0 +1,132 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="gruber">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Gruber</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        html 					{ overflow-y:scroll; }
+        body 					{ padding-top:50px; }
+        #todo-list 				{ margin-bottom:30px; }
+        #todo-form 	 			{ margin-bottom:50px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+
+    <script src="js/controllers/main.js"></script> <!-- load up controller -->
+    <script src="js/services/gruber.js"></script> <!-- load service -->
+    <script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+<div class="container">
+
+    <!-- HEADER AND TODO COUNT -->
+    <div class="jumbotron text-center">
+        <h1>{{headerTitle}} {{ typeUserString }}
+            <span class="label label-info">{{ driverName }}</span>
+            <span class="label label-info">{{ passengerName }}</span>
+        </h1>
+    </div>
+
+    <!-- FORM TO CREATE DRIVER AND PASSENGER -->
+    <div id="create-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center" ng-show="showAddName">
+            <form>
+                <div class="form-group">
+
+                    <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                    <input type="text" class="form-control input-lg text-center" placeholder="Insert name" ng-model="formData.name">
+                </div>
+
+                <!-- create Drivers -->
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="createDriver()">Add Driver</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="createPassenger()">Add Passenger</button>
+            </form>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <!-- FORM TO PUT LOCATION -->
+    <div id="location-form" class="row" ng-show="showPutLocation">
+        <div class="col-sm-8 col-sm-offset-2 text-center" >
+            <form>
+                <div class="form-group">
+
+                    <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
+                    <input type="text" class="form-control input-lg text-center" placeholder="Latitude" ng-model="formData.lat">
+                    <br>
+                    <input type="text" class="form-control input-lg text-center" placeholder="Longtitude" ng-model="formData.lng">
+                </div>
+
+                <!-- create Drivers -->
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="sendLocation()">Send Location</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div id="state-form" class="row" ng-show="showPutLocation">
+        <div class="col-sm-8 col-sm-offset-2 text-center" >
+            <div class="text-center text-muted">
+                <p>Your current state is {{driverState}}</p>
+                <p>Please update your location now</p>
+                <br>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="changeSate()">Change Status</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="knn-list" class="row" ng-show="showSearchDriver">
+        <div class="col-sm-4 col-sm-offset-4 text-center">
+            <div class="form-group">
+
+                <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
+                <input type="text" class="form-control input-lg text-center" placeholder="Latitude" ng-model="formData.latP">
+                <br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Longtitude" ng-model="formData.lngP">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="searchDriver()">Search Driver</button>
+            <!-- LOOP OVER THE drivers -->
+
+            <br>
+            <br>
+            <div ng-repeat="driver in driverList">
+                <p>{{driver.driver_id}} : {{driver.location.lat}} , {{driver.location.lng}}</p>
+            </div>
+
+            <p class="text-center" ng-show="loadingDriver">
+                <span class="fa fa-spinner fa-spin fa-3x"></span>
+            </p>
+
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <div class="text-center text-muted">
+        <p>A demo by TccHtnn.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
