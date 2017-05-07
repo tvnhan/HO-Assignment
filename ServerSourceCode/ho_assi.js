@@ -10,7 +10,6 @@ var mongoose = require('mongoose'); 				// mongoose for mongodb
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var path = require ("path");
 
 
 
@@ -32,8 +31,13 @@ app.use(methodOverride());
 
 // routes ======================================================================
 // routes ======================================================================
-require('./app/routes.js')(app, __dirname);
+// require('./app/routes.js')(app, __dirname);
+app.get('*', function (req, res) {
 
+    console.log("send index.html");
+    console.log(dirname);
+    res.sendFile(dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
 
 
 // listen (start app with node server.js) ======================================
