@@ -31,7 +31,7 @@ app.use(methodOverride());
 
 // routes ======================================================================
 // routes ======================================================================
-// require('./app/routes.js')(app, __dirname);
+ require('./app/routes.js')(app, __dirname);
 // app.get('*', function (req, res) {
 //
 //     console.log("send index.html");
