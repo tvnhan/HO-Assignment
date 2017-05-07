@@ -160,6 +160,9 @@ module.exports = function (app, dirname) {
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
+
+        console.log("send index.html");
+        console.log(dirname);
         res.sendFile(dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
 };
